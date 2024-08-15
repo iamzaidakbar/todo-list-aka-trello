@@ -1,0 +1,116 @@
+// Base Variables (Common Across All Themes)
+$font-family-base: 'Roboto', sans-serif;
+$font-size-x-small: 12px;
+$font-size-small: 14px;
+$font-size-base: 16px;
+$font-size-medium: 20px;
+$font-size-large: 34px;
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+
+$border-radius: 8px;
+$border-color: #dfe1e6;
+
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$transition: all 0.3s ease;
+
+$height-small: 32px;
+$height-medium: 48px;
+$height-large: 64px;
+$height-full: 100vh;
+
+$width-small: 100px;
+$width-medium: 200px;
+$width-large: 300px;
+$width-full: 100vw;
+$width-modal: 700px;
+$height-modal-lg: 800px;
+$height-modal-md: 500px;
+$height-modal-sm: 300px;
+
+$z-index-modal: 1000;
+$z-index-dropdown: 100;
+$z-index-header: 500;
+
+// Error Color
+$error-color: red;
+
+// Status Colors
+$color-backlog: #B0BEC5; // Gray for Backlog
+$color-todo: #42A5F5; // Blue for To Do
+$color-inprogress: #FFCA28; // Yellow for In Progress
+$color-completed: #66BB6A; // Green for Completed
+$color-blocked: #EF5350; // Red for Blocked
+$color-review: #FFA726; // Orange for On Hold
+
+$themes: (
+  blue: (color-primary: #0079bf, // Trello blue
+    color-secondary: #5aac44, // Trello green
+    color-accent: #eb5a46, // Trello red
+    color-background: #1F2D48, // Dark Blue background
+    color-background-light: #ffffff, // Light background
+    color-text-dark: #172b4d, // Dark text
+    color-text-light: #ffffff, // Light text
+    color-text-label: #7e7e7eb7, // Label text
+    color-background-active: #293A61 // Active background
+  ),
+  green: (color-primary: #4caf50, // Green primary
+    color-secondary: #8bc34a, // Green secondary
+    color-accent: #cddc39, // Lime accent
+    color-background: #57945c, // Light green background
+    color-background-light: #ffffff, // Light background
+    color-text-dark: #1b5e20, // Dark green text
+    color-text-light: #ffffff, // Light text
+    color-text-label: #7e7e7eb7, // Label text
+    color-background-active: #66bb6a // Active background
+  ),
+  red: (color-primary: #f44336, // Red primary
+    color-secondary: #e57373, // Red secondary
+    color-accent: #ffebee, // Light red accent
+    color-background: #c02b42, // Light red background
+    color-background-light: #ffffff, // Light background
+    color-text-dark: #b71c1c, // Dark red text
+    color-text-light: #ffffff, // Light text
+    color-text-label: #7e7e7eb7, // Label text
+    color-background-active: #ef5350 // Active background
+  ),
+  pink: (color-primary: #e91e63, // Pink primary
+    color-secondary: #f06292, // Pink secondary
+    color-accent: #f8bbd0, // Light pink accent
+    color-background: #8F3F65, // Dark pink background
+    color-background-light: #fce4ec, // Light pink background
+    color-text-dark: #880e4f, // Dark pink text
+    color-text-light: #ffffff, // Light text
+    color-text-label: #7e7e7eb7, // Label text
+    color-background-active: #ec407a // Active pink background
+  ),
+  yellow: (color-primary: #ffeb3b, // Yellow primary
+    color-secondary: #ffc107, // Yellow secondary
+    color-accent: #ffecb3, // Light yellow accent
+    color-background: #d1ad51, // Yellow background
+    color-background-light: #fffde7, // Light yellow background
+    color-text-dark: #f57f17, // Dark yellow text
+    color-text-light: #ffffff, // Light text
+    color-text-label: #7e7e7eb7, // Label text
+    color-background-active: #ffca28 // Active yellow background
+  )
+);
+
+// Mixin to Apply Theme
+@mixin apply-theme($theme-name) {
+  @each $key, $value in map-get($themes, $theme-name) {
+    --#{$key}: #{$value};
+  }
+}
+
+// Example Usage:
+// .theme-blue { @include apply-theme(blue); }
+// .theme-green { @include apply-theme(green); }
+// .theme-red { @include apply-theme(red); }

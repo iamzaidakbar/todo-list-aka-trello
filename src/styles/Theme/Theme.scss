@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+.Theme {
+    .Theme__Title {
+        font-size: $font-size-large;
+        padding: $spacing-lg;
+    }
+    .Theme__Container {
+        padding:0 0 0 $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+
+        .Theme__Container__Select {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $font-size-x-small;
+            height: $height-medium;
+            width: $height-medium;
+            border-radius: 100%;
+            transition: $transition;
+            color: #fff;
+            cursor: pointer;
+            text-transform: capitalize;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

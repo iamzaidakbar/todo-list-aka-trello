@@ -1,0 +1,78 @@
+@import "../variables.scss";
+
+.Ticket__Summary {
+    border-radius: $border-radius;
+    background-color: #fff;
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    cursor: pointer;
+
+    .Ticket__Title {
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+
+    }
+
+    .Ticket__Description{
+        font-size: $font-size-x-small;
+        color: var(--color-text-label);
+        font-weight: $font-weight-bold;
+
+    }
+
+    .Ticket__Due {
+        margin: 0;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        color: var(--color-text-label);
+    }
+}
+
+.Ticket__Detail {
+    opacity: 1;
+    will-change: auto;
+    transform: none;
+    transform-origin: 50% 72% 17px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.615);
+    left: 0;
+    top: 0;
+    z-index: $z-index-modal;
+    width: $width-full;
+    height: $height-full;
+ 
+
+    .Ticket__Details__Wrapper {
+        background-color: #ffffff;
+        width: 50%;
+        height: 70%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: $spacing-lg;
+        border-radius: $border-radius;
+
+        .Ticket__Title {
+            font-size: $font-size-base;
+            font-weight: $font-weight-bold;
+            text-transform: capitalize;
+    
+        }
+    
+        .Ticket__Description{
+            font-size: $font-size-x-small;
+            color: var(--color-text-label);
+            font-weight: $font-weight-bold;
+    
+        }
+    
+        .Ticket__Due {
+            margin: 0;
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            color: var(--color-text-label);
+        }
+    }
+}

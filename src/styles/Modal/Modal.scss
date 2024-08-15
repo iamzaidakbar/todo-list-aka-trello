@@ -1,0 +1,56 @@
+@import "../variables.scss";
+
+.Modal__Wrapper {
+    width: $width-full;
+    height: $height-full;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000081;
+
+    .Modal {
+        width: $width-modal;
+        max-height: 80%;
+        min-height: 400px;
+        height: auto;
+        background-color: #fff;
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: $spacing-lg;
+        border-radius: $border-radius;
+        box-shadow: 0 1px 25px var(--color-background), 0 1px 10px var(--color-background);
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-background);
+            border-radius: $border-radius;
+        }
+
+        .Modal__Header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .Modal__Title {
+                font-size: $font-size-large;
+                color: var(--color-text-dark);
+            }
+
+            svg {
+                font-size: $font-size-large;
+                cursor: pointer;
+                color: var(--color-text-dark);
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

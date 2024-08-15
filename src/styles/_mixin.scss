@@ -1,0 +1,49 @@
+// _mixins.scss
+
+// Font Sizing
+@mixin font-size($size, $line-height: 1.5, $weight: null) {
+    font-size: $size;
+    line-height: $line-height;
+  
+    @if $weight != null {
+      font-weight: $weight;
+    }
+  }
+  
+  // Truncate Text
+  @mixin text-truncate($max-width: 100%) {
+    max-width: $max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  // Text Shadow
+  @mixin text-shadow($color: rgba(0, 0, 0, 0.15), $x-offset: 1px, $y-offset: 1px, $blur: 2px) {
+    text-shadow: $x-offset $y-offset $blur $color;
+  }
+  
+  // Responsive Font Size
+  @mixin responsive-font-size($small, $medium, $large) {
+    font-size: $small;
+  
+    @media (min-width: 768px) {
+      font-size: $medium;
+    }
+  
+    @media (min-width: 1200px) {
+      font-size: $large;
+    }
+  }
+  
+  // Bold Text
+  @mixin bold-text {
+    font-weight: 700;
+  }
+  
+  // Uppercase Text
+  @mixin uppercase-text {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  

@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.Panel {
+    margin-right: $spacing-xl;
+    margin-bottom: $spacing-lg;
+
+    .Panel__Row__One {
+        gap: $spacing-sm;
+        .Panel__Row__One__Title {
+            color: var(--color-text-dark);
+            font-size: $font-size-medium;
+            font-weight: $font-weight-bold;
+        }
+        .Panel__Row__One__Search__Bar {
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+            padding: $spacing-sm $spacing-md;
+            font-size: $font-size-x-small;
+            color: var(--color-text-label);
+            outline: none;
+            letter-spacing: 1px;
+        }
+    }
+}

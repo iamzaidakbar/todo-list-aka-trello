@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.Tab__path {
+    position: sticky;
+    top: 0;
+    color: var(--color-text-dark);
+    text-transform: capitalize;
+    gap: $spacing-lg;
+    padding: $spacing-md 0 $spacing-md 0;
+    border-bottom: 1px solid $border-color;
+    background-color: var(--color-background-light);
+
+    .Tab__path__icon {
+        font-size: $font-size-medium;
+    }
+
+    .Tab__path__right__icon {
+        font-size: $font-size-medium;
+        margin-top: -3px;
+    }
+
+    .Tab__path__current__path {
+        letter-spacing: 1px;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+    }
+}

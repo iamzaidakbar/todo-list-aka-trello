@@ -1,0 +1,7 @@
+@import '../variables.scss';
+
+.Dashboard {
+    width: calc($width-full - $width-large);
+    height: calc($height-full - 50px);
+    padding: $spacing-lg;
+}   

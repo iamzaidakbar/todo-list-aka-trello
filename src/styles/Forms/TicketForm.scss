@@ -1,0 +1,36 @@
+@import "../variables.scss";
+
+.Ticket__Form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    .Ticket__Form__Group {
+        .form-label {
+            color: var(--color-text-label);
+            font-size: $font-size-x-small;
+            text-transform: uppercase;
+        }
+        .form-control {
+            color: var(--color-text-label);
+            font-weight: $font-weight-normal;
+            outline: none;
+            box-shadow: none;
+            height: 50px;
+            max-height: 200px;
+            min-height: 50px;
+
+            &::placeholder {
+                color: var(--color-text-placeholder);
+            }
+        }
+    }
+
+    .Ticket__Form__Action {
+        .Ticket__Form__Action__Button {
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            border-radius: $border-radius;
+        }
+    }
+}

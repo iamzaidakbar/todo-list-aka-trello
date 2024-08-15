@@ -1,0 +1,56 @@
+@import '../variables.scss';
+
+.Sidebar {
+    height: $height-full;
+    width: $width-large;
+    padding: $spacing-md;
+    gap: $spacing-md;
+
+    .Sidebar__Brand {
+        color: var(--color-text-light);
+        font-weight: $font-weight-bold;
+        font-size: $font-size-large;
+    }
+
+    .Sidebar__List {
+
+        .Sidebar__List__Group {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-sm;
+
+            .Sidebar__List__Group__Item {
+                list-style-type: none;
+                gap: $spacing-sm;
+                padding: $spacing-sm;
+                border-radius: $border-radius;
+                cursor: pointer;
+
+                &.active , &:hover{
+                    background-color: var(--color-background-active);
+                }
+
+                &:hover {
+                    >* {
+                        transform: translate(12px);
+                    }
+                }
+
+                svg {
+                    font-size: $font-size-medium;
+                    transition: $transition;
+                    background-color: transparent;
+                    color: var(--color-text-light);
+                }
+
+                .Sidebar__List__Group__Item__Action {
+                    text-decoration: none;
+                    color: var(--color-text-light);
+                    font-size: $font-size-medium;
+                    transition: $transition;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

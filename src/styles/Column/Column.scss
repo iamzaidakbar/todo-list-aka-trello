@@ -1,0 +1,44 @@
+@import "../variables.scss";
+
+.Column {
+    gap: $spacing-md;
+
+    .Column__Header {
+        height: 15px;
+        align-items: start;
+        gap: $spacing-sm;
+
+        .Column__Color__Code {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+
+        .Column__Title {
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            margin: 0;
+        }
+    }
+
+    .Column__New__Ticket {
+        background-color: transparent;
+        border: 1px dashed $border-color;
+        border-radius: $border-radius;
+        width: 100%;
+    }
+
+    .Column__Ticket__Section {
+        background-color: #F2F6FF;
+        height: calc($height-full - 300px);
+        width: $width-large;
+        border-radius: $border-radius;
+        padding: $spacing-md;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+}

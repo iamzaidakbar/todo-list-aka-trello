@@ -1,0 +1,37 @@
+@import "../variables.scss";
+
+.Column__Form {
+    padding: $spacing-lg 0;
+
+    .Column__Form__Group {
+
+        .form-select {
+            height: $height-large;
+            box-shadow: none;
+            outline: none;
+
+            * {
+                border: 1px solid red;
+                font-size: $font-size-base;
+            }
+        }
+    }
+
+    ._Error_ {
+        opacity: 1 !important;
+    }
+
+    .Column__Form__Error__Message {
+        opacity: 0;
+        transition: $transition;
+    }
+
+    .Column__Form__Action {
+        .Column__Form__Action__Button {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            border-radius: $border-radius;
+        }
+    }
+}

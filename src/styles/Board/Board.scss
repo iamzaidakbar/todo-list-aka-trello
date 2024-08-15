@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+.Board {
+    width: calc($width-full - $width-large - 130px);
+    gap: $spacing-lg;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:hover {
+
+        &::-webkit-scrollbar {
+            display: unset;
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-background);
+            border-radius: $border-radius;
+        }
+    }
+}

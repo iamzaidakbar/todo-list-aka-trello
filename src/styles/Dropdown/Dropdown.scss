@@ -1,0 +1,74 @@
+@import "../variables.scss";
+
+.Dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.Dropdown__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  background: var(--color-background-light);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+
+  .Dropdown__Selected__Value {
+    color: var(--color-text-dark);
+  }
+}
+
+.Dropdown__Header:hover {
+  background: var(--color-background-light);
+  border-color: $border-color;
+}
+
+.Dropdown__Arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.Dropdown__Arrow.open {
+  transform: rotate(180deg);
+}
+
+.Dropdown__Menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-background-light);
+  border: 1px solid  $border-color;
+  border-radius: $border-radius;
+  transition: $transition;
+  margin-top: 4px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+}
+
+.Dropdown__Option {
+  padding: 0.5rem;
+  font-size: $font-size-base;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.555);
+  transition: background 0.3s ease;
+
+  &.Dropdown__Option__Disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.Dropdown__Option:hover {
+  background: #f0f0f0;
+}

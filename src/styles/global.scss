@@ -1,0 +1,106 @@
+@import './variables';
+
+// Default theme applied via :root
+:root {
+  @include apply-theme(blue); 
+}
+
+// Apply the blue theme when the .theme-blue class is added to the body
+.theme-blue {
+  @include apply-theme(blue); 
+}
+
+// Apply the green theme when the .theme-green class is added to the body
+.theme-green {
+  @include apply-theme(green); 
+}
+
+// Apply the red theme when the .theme-red class is added to the body
+.theme-red {
+  @include apply-theme(red); 
+}
+
+// Apply the pink theme when the .theme-red class is added to the body
+.theme-pink {
+  @include apply-theme(pink); 
+}
+
+// Apply the yellow theme when the .theme-red class is added to the body
+.theme-yellow {
+  @include apply-theme(yellow); 
+}
+
+// Common body styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  background-color: var(--color-background);
+}
+
+button {
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-small;
+  gap: $spacing-sm;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--color-background-active);
+  }
+
+  svg {
+    font-size: $font-size-base;
+    margin-top: -1px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+// Example usage
+.status-backlog {
+  background-color: $color-backlog;
+  color: $color-backlog;
+}
+
+.status-todo {
+  background-color: $color-todo;
+  color: $color-todo;
+}
+
+.status-inprogress {
+  background-color: $color-inprogress;
+  color: $color-inprogress;
+}
+
+.status-completed {
+  background-color: $color-completed;
+  color: $color-completed;
+}
+
+.status-blocked {
+  background-color: $color-blocked;
+  color: $color-blocked;
+}
+
+.status-review {
+  background-color: $color-review;
+  color: $color-review;
+}
+
+.Error__Message {
+  color: $error-color;
+  font-size: $font-size-x-small;
+  padding: $spacing-xs;
+}
