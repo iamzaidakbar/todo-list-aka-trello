@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "../styles/Forms/TicketForm.scss";
 import { addTicket } from '../store/slices/columnSlice';
+import { closeModal } from '../store/slices/modalSlice';
 
-const TicketForm = ({ columnId, onClose }) => {
+const TicketForm = () => {
   const dispatch = useDispatch();
+  const columnId = useSelector(state => state?.column_Id?.columnId)
+  const columns = useSelector(state => state?.columns?.columns)
+  const status = columns?.find(column => column.id === columnId);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [assignee, setAssignee] = useState('');
@@ -17,9 +22,10 @@ const TicketForm = ({ columnId, onClose }) => {
     e.preventDefault();
 
     const newTicket = {
-      id: `ticket-${Date.now()}`, 
+      id: `ticket-${Date.now()}`,
       title,
       description,
+      status: status.title,
       assignee,
       priority,
       dueDate,
@@ -28,7 +34,7 @@ const TicketForm = ({ columnId, onClose }) => {
     };
 
     dispatch(addTicket({ columnId, ticket: newTicket }));
-    onClose();
+    dispatch(closeModal())
   };
 
   return (
@@ -53,6 +59,17 @@ const TicketForm = ({ columnId, onClose }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
+        />
+      </div>
+
+      <div className='Ticket__Form__Group'>
+        <label htmlFor="ticket_status" className="form-label">Status</label>
+        <input
+          className="form-control"
+          id="ticket_status"
+          value={status.title}
+          required
+          disabled
         />
       </div>
 

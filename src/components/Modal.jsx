@@ -29,7 +29,7 @@ const Modal = () => {
           {modalType === 'column' ? (
             <ColumnForm />
           ) : (
-            <TicketForm onCancel={handleClose} />
+            <TicketForm />
           )}
         </div>
       </div>

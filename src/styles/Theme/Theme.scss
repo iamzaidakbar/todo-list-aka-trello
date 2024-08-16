@@ -5,8 +5,33 @@
         font-size: $font-size-large;
         padding: $spacing-lg;
     }
+
+    .Theme__Current {
+        display: flex;
+        align-items: center;
+        padding: $spacing-lg;
+        gap: $spacing-md;
+
+        .Theme__Current__Label {
+
+        }
+        .Theme__Current__Color {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $font-size-x-small;
+            height: $height-medium;
+            width: $height-medium;
+            border-radius: 100%;
+            transition: $transition;
+            color: #fff;
+            cursor: pointer;
+            text-transform: capitalize;
+        }
+    }
+
     .Theme__Container {
-        padding:0 0 0 $spacing-lg;
+        padding: 0 0 0 $spacing-lg;
         display: flex;
         align-items: center;
         gap: $spacing-md;

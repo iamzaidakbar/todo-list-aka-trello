@@ -3,11 +3,13 @@ import '../styles/Column/Column.scss';
 import Ticket from './Ticket';
 import { openModal } from '../store/slices/modalSlice';
 import { useDispatch } from 'react-redux';
+import { addColumnId } from '../store/slices/idSlice';
 
 const Column = ({ column }) => {
   const dispatch = useDispatch()
 
-  const handleOpenTicketModal = () => {
+  const handleOpenTicketModal = (column_Id) => {
+    dispatch(addColumnId(column_Id))
     dispatch(openModal('ticket'));
   };
 
@@ -21,7 +23,7 @@ const Column = ({ column }) => {
         {column?.tickets.map(ticket => (
           <Ticket key={ticket.id} ticket={ticket} />
         ))}
-        <button className={`Column__New__Ticket status-${column.title.replace(' ', '').toLowerCase()}`} onClick={handleOpenTicketModal}>Add Ticket</button>
+        <button className={`Column__New__Ticket status-${column.title.replace(' ', '').toLowerCase()}`} onClick={() => { handleOpenTicketModal(column.id) }}>Add Ticket</button>
       </div>
     </div>
   );

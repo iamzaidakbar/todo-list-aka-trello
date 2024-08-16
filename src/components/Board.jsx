@@ -12,8 +12,6 @@ const Board = () => {
   }, [board])
 
 
-  console.log(board);
-
   return (
     <div className="Board d-flex align-items-start">
       {Board?.columns.map(column => (
