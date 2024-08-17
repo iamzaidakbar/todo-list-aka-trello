@@ -13,8 +13,9 @@
         gap: $spacing-md;
 
         .Theme__Current__Label {
-
+            color: var(--color-text-label);
         }
+
         .Theme__Current__Color {
             display: flex;
             align-items: center;
